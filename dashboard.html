@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Result Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="navbar">
+    <h2>Student Dashboard</h2>
+    <a href="index.html" class="nav-btn">Add / Update Result</a>
+</nav>
+
+<div class="dashboard">
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="stat-card blue">Total<br><span id="total">0</span></div>
+        <div class="stat-card green">Pass<br><span id="pass">0</span></div>
+        <div class="stat-card red">Fail<br><span id="fail">0</span></div>
+    </div>
+
+    <!-- CONTROLS -->
+    <div class="controls">
+        <input type="text" id="search" placeholder="Search by name or roll" onkeyup="searchStudent()">
+        <button onclick="exportCSV()">Export CSV</button>
+    </div>
+
+    <!-- CHARTS -->
+    <div class="charts">
+        <div class="chart-card">
+            <h4>Overall Result (Bar)</h4>
+            <canvas id="barChart"></canvas>
+        </div>
+
+        <div class="chart-card">
+            <h4>Overall Result (Pie)</h4>
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+
+    <!-- DYNAMIC SUBJECT TABLE -->
+    <div class="table-wrapper">
+        <table>
+            <thead>
+                <tr id="headerRow"></tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+    </div>
+
+</div>
+
+<script src="dashboard.js"></script>
+</body>
+</html>
